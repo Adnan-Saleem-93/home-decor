@@ -26,7 +26,7 @@ const NewsLetter = () => {
 				</div>
 				<div>
 					{/* Email Section */}
-					<div className="flex flex-col m-8">
+					<div className="flex flex-col m-8 mt-12">
 						<Input
 							type="email"
 							placeholder="Your Email Address"

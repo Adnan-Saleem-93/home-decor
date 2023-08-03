@@ -11,7 +11,7 @@ export default function Home() {
 			<section className="w-full px-8 pt-8 pb-4">
 				<Header />
 			</section>
-			<section className="w-[75%] px-8 pt-4 pb-10">
+			<section className="w-[65%] px-8 pt-4 pb-10">
 				<Navbar />
 			</section>
 

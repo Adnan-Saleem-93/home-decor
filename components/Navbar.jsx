@@ -1,35 +1,62 @@
+"use client";
+
 import { colors } from "@/assets/colors";
-import { MdOutlineSearch } from "react-icons/md";
 import Input from "./Input";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-	{ name: "home", text: "Home" },
-	{ name: "about", text: "About" },
-	{ name: "features", text: "Features" },
-	{ name: "categories", text: "Categories" },
-	{ name: "contact", text: "Contact" },
+	{ text: "Home" },
+	{ text: "About" },
+	{ text: "Features" },
+	{ text: "Categories" },
+	{ text: "Contact" },
 ];
+
 const Navbar = () => {
+	const [activeTabIndex, setActiveTabIndex] = useState(0);
+	const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
+	const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
+
+	const tabsRef = useRef([]);
+
+	useEffect(() => {
+		function setTabPosition() {
+			const currentTab = tabsRef.current[activeTabIndex];
+			setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
+			setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
+		}
+
+		setTabPosition();
+		window.addEventListener("resize", setTabPosition);
+
+		return () => window.removeEventListener("resize", setTabPosition);
+	}, [activeTabIndex]);
+
 	return (
 		<div className="flex w-full justify-between items-center">
-			{navItems.map((item, index) => {
-				const { name, text } = item;
-				return (
-					<p
-						key={index}
-						className={`text-[#${colors.dark.main}] tracking-wide text-[13px] font-bold`}
-						id={name}
-					>
-						{text}
-					</p>
-				);
-			})}
-			<label
-				for="default-search"
-				className="mb-2 text-sm font-medium text-gray-900 sr-only "
-			>
-				Search
-			</label>
+			<div className="relative mt-1">
+				<div className="flex space-x-12">
+					{navItems.map((item, idx) => {
+						const { text } = item;
+
+						return (
+							<button
+								key={idx}
+								ref={(el) => (tabsRef.current[idx] = el)}
+								className={`pb-2 text-[#${colors.dark.main}] tracking-wide text-[16px] font-bold`}
+								onClick={() => setActiveTabIndex(idx)}
+							>
+								{text}
+							</button>
+						);
+					})}
+				</div>
+				<span
+					className="absolute bottom-0 block h-1 bg-teal-500 transition-all duration-300"
+					style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
+				/>
+			</div>
+
 			<div className="relative">
 				<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 					<svg
@@ -49,7 +76,7 @@ const Navbar = () => {
 					</svg>
 				</div>
 
-				<Input type="search" placeholder="Search" id="default-search" />
+				<Input type="search" placeholder="Search Here" id="default-search" />
 			</div>
 		</div>
 	);
