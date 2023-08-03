@@ -5,7 +5,7 @@ import UnderlinedText from "./Underlined-Text";
 
 const Features = () => {
 	return (
-		<div className="flex flex-col items-start justify-start w-full ">
+		<div className="flex flex-col items-start justify-start w-full">
 			<div className="mb-4">
 				<UnderlinedText text="Features" />
 			</div>

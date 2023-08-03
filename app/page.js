@@ -19,7 +19,7 @@ export default function Home() {
 				<Carousel />
 			</section>
 
-			<section className="w-full px-8 py-6 flex justify-between">
+			<section className="w-full px-8 pt-12 flex justify-between">
 				<article className="w-[64%] flex flex-col">
 					<Features />
 					<Cards />

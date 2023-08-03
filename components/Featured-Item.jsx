@@ -8,7 +8,7 @@ import ShareSection from "./Share-Section";
 const FeaturedItem = ({ pic, flexDirection = "row", title = "" }) => {
 	return (
 		<div
-			className={`flex justify-between ${flexDirection} w-full my-8 border-b-2 pb-10 border-gray-600`}
+			className={`flex justify-between ${flexDirection} w-full my-8 border-b-2 pb-10 border-gray-400`}
 		>
 			<Image
 				src={pic}
