@@ -4,7 +4,7 @@ import ShareSection from "./Share-Section";
 
 const CardItem = ({ pic = null, alt = "", title = "" }) => {
 	return (
-		<div className="border border-gray-400 p-10 rounded-[1rem] w-[47.5%]">
+		<div className="border border-gray-500 p-10 rounded-[1rem] w-[47.5%]">
 			<Image src={pic} alt={alt} className="w-full h-[200px] object-cover" />
 			<h2 className="text-[20px] mt-6 font-bold">{title}</h2>
 			<p className="text-gray-500">

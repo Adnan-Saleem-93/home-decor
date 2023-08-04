@@ -3,15 +3,20 @@ import Item from "./Item";
 import UnderlinedText from "./Underlined-Text";
 
 import Item1 from "../assets/images/item-1.jpg";
+import Item2 from "../assets/images/item-2.jpg";
+import Item3 from "../assets/images/item-3.jpg";
+import Item4 from "../assets/images/item-4.jpg";
+import Item5 from "../assets/images/item-5.jpg";
+import Item6 from "../assets/images/item-6.jpg";
 import FollowSection from "./Follow-Section";
 
 const items = [
 	{ text: "Item 1", img: Item1, alt: "item-1" },
-	{ text: "Item 1", img: Item1, alt: "item-2" },
-	{ text: "Item 3", img: Item1, alt: "item-3" },
-	{ text: "Item 4", img: Item1, alt: "item-4" },
-	{ text: "Item 5", img: Item1, alt: "item-5" },
-	{ text: "Item 6", img: Item1, alt: "item-6" },
+	{ text: "Item 1", img: Item2, alt: "item-2" },
+	{ text: "Item 3", img: Item3, alt: "item-3" },
+	{ text: "Item 4", img: Item4, alt: "item-4" },
+	{ text: "Item 5", img: Item5, alt: "item-5" },
+	{ text: "Item 6", img: Item6, alt: "item-6" },
 ];
 
 const NewsLetter = () => {

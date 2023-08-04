@@ -35,7 +35,7 @@ const Navbar = () => {
 	return (
 		<div className="flex w-full justify-between items-center">
 			<div className="relative mt-1">
-				<div className="flex space-x-12">
+				<div className="flex space-x-14">
 					{navItems.map((item, idx) => {
 						const { text } = item;
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 					})}
 				</div>
 				<span
-					className="absolute bottom-0 block h-1 bg-teal-500 transition-all duration-300"
+					className="absolute bottom-0 block h-1 bg-gray-500 transition-all duration-300"
 					style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
 				/>
 			</div>
@@ -60,7 +60,7 @@ const Navbar = () => {
 			<div className="relative">
 				<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 					<svg
-						className="w-4 h-4 text-gray-500 "
+						className="w-4 h-4 text-gray-500"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -76,7 +76,12 @@ const Navbar = () => {
 					</svg>
 				</div>
 
-				<Input type="search" placeholder="Search Here" id="default-search" />
+				<Input
+					type="search"
+					placeholder="Search"
+					id="default-search"
+					customClasses="!pl-[34px] placeholder:p-4"
+				/>
 			</div>
 		</div>
 	);

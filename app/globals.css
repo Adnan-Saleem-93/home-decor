@@ -25,4 +25,7 @@ body {
 	.dark--gradient {
 		@apply bg-gradient-to-b from-[#2a6458] to-[#1e463d];
 	}
+	.justify--items--center {
+		@apply flex justify-center items-center;
+	}
 }
