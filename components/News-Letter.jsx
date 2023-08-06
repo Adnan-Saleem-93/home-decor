@@ -36,7 +36,7 @@ const NewsLetter = () => {
 							type="email"
 							placeholder="Your Email Address"
 							id="email"
-							customClasses="!w-full !bg-gray-300 !p-4 !flex"
+							customClasses="!w-full !bg-gray-300 focus:!bg-gray-400/50 !p-4 !flex"
 						/>
 						<button className="text-slate-100 w-full p-4 mt-4 pl-10 text-md dark--gradient hover:bg-gradient-to-b hover:from-[#204b43] hover:to-[#112722] text-center rounded-full">
 							Sign Up
