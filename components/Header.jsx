@@ -5,7 +5,7 @@ const dancingScripts = Dancing_Script({ subsets: ["latin"], weight: "700" });
 
 const Header = () => {
 	return (
-		<div>
+		<article className="w-[30%]">
 			<p
 				className={`uppercase font-extrabold tracking-[5px] text-xl text-[#${colors.dark.main}]`}
 			>
@@ -16,7 +16,7 @@ const Header = () => {
 					Decor
 				</span>
 			</p>
-		</div>
+		</article>
 	);
 };
 

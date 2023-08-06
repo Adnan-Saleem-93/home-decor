@@ -37,12 +37,12 @@ const Carousel = () => {
 						return (
 							<div
 								key={index}
-								class="justify--items--center h-60 w-60 rounded-full mx-8 bg-white hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1"
+								class="justify--items--center h-60 w-60 rounded-full mx-8 bg-white hover:scale-110 p-1 transition-all duration-500"
 							>
 								<Image
 									src={img}
 									alt={alt}
-									className="rounded-full h-52 w-52  cursor-pointer"
+									className="rounded-full h-52 w-52 cursor-pointer object-cover"
 								/>
 							</div>
 						);

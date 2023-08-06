@@ -1,17 +1,31 @@
+"use client";
+
 import Cards from "@/components/Cards";
 import Carousel from "@/components/Carousel";
 import Features from "@/components/Features";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/News-Letter";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+	const [top, setTop] = useState(true);
+
+	useEffect(() => {
+		const scrollHandler = () => {
+			window.screenY > 10 ? setTop(false) : setTop(true);
+		};
+		window.addEventListener("scroll", scrollHandler);
+		return () => window.removeEventListener("scroll", scrollHandler);
+	}, [top]);
+
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-start">
-			<section className="w-full px-8 pt-8 pb-4">
-				<Header />
-			</section>
-			<section className="w-[65%] px-8 pt-4 pb-10">
+			<section
+				className={`sticky ${
+					top && "shadow-md"
+				} bg-white top-0 w-full flex flex-row justify-between items-center px-8 pt-8 pb-4`}
+			>
 				<Navbar />
 			</section>
 

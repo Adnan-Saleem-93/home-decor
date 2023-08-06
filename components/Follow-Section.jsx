@@ -7,10 +7,27 @@ import {
 } from "react-icons/fa";
 
 const followLinks = [
-	{ Icon: FaFacebookF, link: "www.facebook.com" },
-	{ Icon: FaInstagram, link: "www.instagram.com" },
-	{ Icon: FaPinterestP, link: "www.pinterest.com" },
-	{ Icon: FaTwitter, link: "www.twitter.com" },
+	{
+		Icon: FaFacebookF,
+		link: "www.facebook.com",
+		customClasses: "group-hover:bg-[#4267B2] group-hover:text-white",
+	},
+	{
+		Icon: FaInstagram,
+		link: "www.instagram.com",
+		customClasses:
+			"group-hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 group-hover:text-white",
+	},
+	{
+		Icon: FaPinterestP,
+		link: "www.pinterest.com",
+		customClasses: "group-hover:bg-[#E60023] group-hover:text-white",
+	},
+	{
+		Icon: FaTwitter,
+		link: "www.twitter.com",
+		customClasses: "group-hover:bg-blue-500 group-hover:text-white",
+	},
 ];
 
 const FollowSection = () => {
@@ -25,10 +42,12 @@ const FollowSection = () => {
 
 			<div className="flex justify-between items-center w-full my-10">
 				{followLinks.map((item, index) => {
-					const { Icon, link } = item;
+					const { Icon, link, customClasses } = item;
 					return (
 						<a key={index} target="_blank" href={link} className="group">
-							<Icon className="rounded-full p-4 h-16 w-16 bg-gray-100 text-[#326a5c] group-hover:text-[#203933]" />
+							<Icon
+								className={`rounded-full bg-white text-gray-800 p-4 h-16 w-16 ${customClasses}`}
+							/>
 						</a>
 					);
 				})}
